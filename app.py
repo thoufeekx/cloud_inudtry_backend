@@ -9,7 +9,11 @@ from typing import Any, Dict
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:8090", "http://127.0.0.1:8090"]}})
+CORS(app, resources={r"/api/*": {"origins": [
+    "https://cloudindustry-frontend.azurestaticapps.net",
+    "http://localhost:8090",
+    "http://127.0.0.1:8090"
+], "allow_headers": ["Content-Type"]}})
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
